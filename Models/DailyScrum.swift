@@ -33,6 +33,17 @@ extension DailyScrum {
             self.name = name
         }
     }
+    
+    struct Data {
+        var title: String = ""
+        var attendees: [Attendee] = []
+        var lengthInMinutes: Double = 5
+        var theme: Theme = .seafoam
+    }
+    
+    var data: Data {
+        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+    }
 }
 
 // This part of the code adds mock information, instead of connecting to one service or an API
