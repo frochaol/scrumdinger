@@ -24,6 +24,7 @@ struct DetailEditView: View {
                     Text("\(Int(data.lengthInMinutes)) minutes")
                         .accessibilityHidden(true)
                 }
+                ThemePicker(selection: $data.theme)
             }
             Section(header: Text("Attendees")) {
                 ForEach(data.attendees) { attendee in
@@ -38,7 +39,6 @@ struct DetailEditView: View {
                         withAnimation {
                             let attendee = DailyScrum.Attendee(name: newAttendeeName)
                             data.attendees.append(attendee)
-                            // we clear the field
                             newAttendeeName = ""
                         }
                     }) {
