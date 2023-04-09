@@ -19,7 +19,7 @@ struct DetailView: View {
                 NavigationLink(destination: MeetingView()) {
                     Label("Start Meeting", systemImage: "timer")
                         .font(.headline)
-                    .foregroundColor(.accentColor)
+                        .foregroundColor(.accentColor)
                 }
                 HStack {
                     Label("Length", systemImage: "clock")
@@ -38,7 +38,6 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
-            // added section for the list of attendees
             Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) { attendee in
                     Label(attendee.name, systemImage: "person")
