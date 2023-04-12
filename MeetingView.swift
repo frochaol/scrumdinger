@@ -12,7 +12,8 @@ struct MeetingView: View {
     @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
     
-    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer
+    }
     
     var body: some View {
         ZStack {

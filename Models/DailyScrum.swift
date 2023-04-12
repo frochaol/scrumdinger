@@ -21,6 +21,14 @@ struct DailyScrum: Identifiable {
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
     }
+    
+    init(data: Data) {
+        id = UUID()
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        theme = data.theme
+    }
 }
 
 extension DailyScrum {
