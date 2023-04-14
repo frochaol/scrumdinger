@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DailyScrum: Identifiable, Decodable {
+struct DailyScrum: Identifiable, Decodable, Encodable {
     let id: UUID
     var title: String
     var attendees: [Attendee]
