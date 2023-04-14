@@ -9,11 +9,19 @@ import SwiftUI
 
 @main
 struct ScrumdingerApp: App {
-    @State private var scrums = DailyScrum.sampleData
+    @StateObject private var store = ScrumStore()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ScrumViews(scrums: $scrums)
+                ScrumViews(scrums: $store.scrums)
+                    .task {
+                        do {
+                            try await store.load()
+                        } catch {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
             }
         }
     }
